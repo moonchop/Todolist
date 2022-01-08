@@ -1,0 +1,74 @@
+.listForm{
+    display: flex;
+    list-style: none;
+}
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 532px;
+}
+
+/* 2개 layout */
+.Todo{
+    flex:1;
+    overflow-y: auto;
+    background-color: beige;
+}
+.Done{
+    flex:1;
+    overflow-y: auto;
+    background-color: rgb(222, 224, 195);
+}
+.input{
+    display: flex;
+ 
+}
+#textinput{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+#textinput:hover{
+    background-color:rgb(195, 240, 195);
+    transition: 0.3s;
+}
+#textbtn{
+    width:10%;
+}
+#listBtn{
+    
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: beige;
+    
+    /* delete 버튼 */
+    width: 40px;
+    height: 40px;
+    border: none;
+    box-shadow: 0;
+    border-radius: 50%; 
+    opacity: 0.2;
+    /* border-width: 1px;상하좌우 -선굵기*/ 
+}
+/* 버튼위로 커서 옮기면 color 변함 */
+#listBtn:hover{
+    background-color:red;
+    transition: 0.3s;
+    opacity: 1;
+}
+/* 버튼와 수평맞춤 */
+#list{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+/* ul 위치 좌로 조정 */
+ul{
+  
+    margin-left:-40px;
+}
