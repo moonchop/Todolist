@@ -1,21 +1,35 @@
-import {React,useState} from 'react'
+import { click } from '@testing-library/user-event/dist/click';
+import {React, useRef,useState} from 'react'
 import './list.css'
 
 function List(){
     const [text, setText]=useState('');
-    const [enter,setEnter]=useState([]);
+    const [todo,setTodo]=useState([]);
 
+    const num=useRef(1)
     const onChange=(e)=>{
        setText(e.target.value);
       
     }
 
-    const onReset=(e)=>{
-        setEnter([...enter, text])
+    const onReset=()=>{
+       if(!text) return;
+        setTodo([...todo,
+            { 
+            id:num.current++,
+            text,
+            check:false,
+            delete:false
+            }
+        ])
         setText('');
     }
-    const onDelete=()=>{
-        console.log("del");
+    const onDelete=(id)=>{
+        console.log(id)
+        setTodo(todo.filter(todo => todo.id!==id))
+    }
+    const onCheck=()=>{
+        console.log("check");
     }
     return(
         <div className='List'>
@@ -26,19 +40,32 @@ function List(){
             <div className="container">
                 <div className="Todo">
                     <ul>
-                        {enter.map((text,i)=>{
+                        {todo.map((text,i)=>{
                             return (
-                            <div key={i} className='listForm'>
-                                <button id="listBtn" onClick={onDelete}>❌</button>
-                                <li id="list">{text}</li>
-                            </div>)
+                            <li key={i} className='listForm'>
+                                <button id="chkBtn" onClick={onCheck}>✔</button>
+                                <b id="list">{text.text}</b>
+                                <button id="delBtn" onClick={()=>onDelete(text.id)}>❌</button>
+                            </li>)
                         })}   
 
                     </ul>
                 </div>
 
                 <div className="Done">
-                    <h1>Done</h1>
+                <div className="Todo">
+                    <ul>
+                        {todo.map((text,i)=>{
+                            return (
+                            <li key={i} className= {text.check ? "hidden":'listForm'}>
+                                <button id="chkBtn" onClick={onCheck}>✔</button>
+                                <b id="list">{text.text}</b>
+                                <button id="delBtn" onClick={onDelete}>❌</button>
+                            </li>)
+                        })}   
+
+                    </ul>
+                </div>
                 </div>
             </div>
         </div>
