@@ -29,15 +29,30 @@ function List(){
         
         setTodo(todo.filter(todo => todo.id!==id))
     }
-    const onDelete_done=(id)=>{
-        
-        setDone(done.filter(done => done.id!==id))
-    }
     const onCheck=(id,text)=>{
         
         setTodo(todo.filter(todo => todo.id!==id))
         if(todo.map(todo =>todo.id===id)){
             setDone([...done,
+                {
+                    id:id,
+                    text:text,
+                    check:true,
+                    delete:false
+                }]
+                )
+        }
+    }
+     
+    const onDelete_done=(id)=>{
+        
+        setDone(done.filter(done => done.id!==id))
+    }
+    
+    const onCheck_done=(id,text)=>{
+        setDone(done.filter(done => done.id!==id))
+        if(done.map(done =>done.id===id)){
+            setTodo([...todo,
                 {
                     id:id,
                     text:text,
@@ -74,7 +89,7 @@ function List(){
                         {done.map((text,i)=>{
                             return (
                             <li key={i} className= 'listForm'>
-                                <button id="chkBtn_done"></button>
+                                <button id="chkBtn" onClick={()=>onCheck_done(text.id,text.text)}>✔</button>
                                 <b id="list">{text.text}</b>
                                 <button id="delBtn" onClick={()=>onDelete_done(text.id)}>❌</button>
                             </li>)
