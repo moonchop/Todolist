@@ -17,7 +17,7 @@
 .Done{
     flex:1;
     overflow-y: auto;
-    background-color: rgb(222, 224, 195);
+    background-color: rgb(182, 221, 185);
 }
 .input{
     display: flex;
@@ -67,8 +67,39 @@
 
 #delBtn{
     margin-left: auto;
+    margin-bottom: 10px;
+    background-color: #A5BE3200;
+    opacity: 0.5;
+    border:none;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    opacity: 0.8;
+    font-size: 15px;
 }
-
+#delBtn:hover{
+    background-color: pink;
+    transition: 0.3s;
+    opacity: 1;
+}
+#chkBtn_done{
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(182, 221, 185);
+    
+    /* delete 버튼 */
+    width: 40px;
+    height: 40px;
+    border: none;
+    box-shadow: 0;
+    border-radius: 50%; 
+    opacity: 0.8;
+    font-size: 30px;
+    color: green;
+}
 
 
 

@@ -5,6 +5,7 @@ import './list.css'
 function List(){
     const [text, setText]=useState('');
     const [todo,setTodo]=useState([]);
+    const [done,setDone]=useState([]);
 
     const num=useRef(1)
     const onChange=(e)=>{
@@ -12,7 +13,7 @@ function List(){
       
     }
 
-    const onReset=()=>{
+    const onAdd=()=>{
        if(!text) return;
         setTodo([...todo,
             { 
@@ -25,17 +26,32 @@ function List(){
         setText('');
     }
     const onDelete=(id)=>{
-        console.log(id)
+        
         setTodo(todo.filter(todo => todo.id!==id))
     }
-    const onCheck=()=>{
-        console.log("check");
+    const onDelete_done=(id)=>{
+        
+        setDone(done.filter(done => done.id!==id))
+    }
+    const onCheck=(id,text)=>{
+        
+        setTodo(todo.filter(todo => todo.id!==id))
+        if(todo.map(todo =>todo.id===id)){
+            setDone([...done,
+                {
+                    id:id,
+                    text:text,
+                    check:true,
+                    delete:false
+                }]
+                )
+        }
     }
     return(
         <div className='List'>
             <div className='input'>
-                <input id="textinput" type="text" placeholder='입력하세요' value={text} onChange={onChange} onKeyPress={(e)=>{if(e.key==='Enter')onReset()}}></input>
-                <button id="textbtn" onClick={onReset} className="inputBtn" >✅</button>
+                <input id="textinput" type="text" placeholder='입력하세요' value={text} onChange={onChange} onKeyPress={(e)=>{if(e.key==='Enter')onAdd()}}></input>
+                <button id="textbtn" onClick={onAdd} className="inputBtn" >✅</button>
             </div>
             <div className="container">
                 <div className="Todo">
@@ -43,7 +59,7 @@ function List(){
                         {todo.map((text,i)=>{
                             return (
                             <li key={i} className='listForm'>
-                                <button id="chkBtn" onClick={onCheck}>✔</button>
+                                <button id="chkBtn" onClick={()=>onCheck(text.id,text.text)}>✔</button>
                                 <b id="list">{text.text}</b>
                                 <button id="delBtn" onClick={()=>onDelete(text.id)}>❌</button>
                             </li>)
@@ -53,14 +69,14 @@ function List(){
                 </div>
 
                 <div className="Done">
-                <div className="Todo">
+                <div className="Todo2">
                     <ul>
-                        {todo.map((text,i)=>{
+                        {done.map((text,i)=>{
                             return (
-                            <li key={i} className= {text.check ? "hidden":'listForm'}>
-                                <button id="chkBtn" onClick={onCheck}>✔</button>
+                            <li key={i} className= 'listForm'>
+                                <button id="chkBtn_done"></button>
                                 <b id="list">{text.text}</b>
-                                <button id="delBtn" onClick={onDelete}>❌</button>
+                                <button id="delBtn" onClick={()=>onDelete_done(text.id)}>❌</button>
                             </li>)
                         })}   
 
