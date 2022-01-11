@@ -11,7 +11,7 @@ function Time({getDate}){
 
     useEffect(()=>{
         getDate(endDate);
-    })
+    },[endDate])
     return(
         <div>
             <DatePicker 
