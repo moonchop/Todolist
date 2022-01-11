@@ -3,14 +3,13 @@ import React from 'react';
 import Template from "./components/template/Template"
 import Head from "./components/head/Head"
 import List from "./components/list/List"
-import Item from "./components/item/Item"
+import Time from "./components/time/Time"
 function App() {
   return (
     <div>
       <Template>
        <Head/>
        <List/>
-       <Item/>
       </Template>
       
     </div>
