@@ -112,8 +112,7 @@ function List(props){
                                 <div className="moment">
                                     <div className="endDate">마감시한 : {text.date.getYear()+1900}-{text.date.getMonth()+1}-{text.date.getDate()} 까지</div>
                                     <div className='leftDate'>
-                                        <div>남은시간 :</div>
-                                        <Moment duration={new Date()} date={text.date}></Moment>(<div>{'접수중'}</div>)
+                                        <div>남은시간 : </div><Moment duration={new Date()} date={text.date}></Moment>
                                     </div>
                                 </div>
                             </li>

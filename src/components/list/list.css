@@ -142,7 +142,7 @@ ul{
 
 .moment{
     display: flex;
-    text-align: center;
+  
     justify-content:flex-start;
     margin-left: 50px;
 }
@@ -156,7 +156,7 @@ ul{
 .leftDate{
     display: flex;
     flex-direction: row;
-    text-align: center;
+    
     justify-content: center;
   
     padding:3px;
