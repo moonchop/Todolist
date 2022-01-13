@@ -3,7 +3,11 @@ import Moment from 'react-moment';
 import 'moment/locale/ko';
 import './list.css'
 import Time from '../time/Time';
+
 function List(props){
+
+
+    
     const [text, setText]=useState('');
     const [todo,setTodo]=useState([]);
     const [done,setDone]=useState([]);
@@ -13,14 +17,14 @@ function List(props){
     const endDate=(number)=>{
         if(number!==0) {
             setEnd(number)
-            console.log(number)
+          
         }
     }
-
+    
     const num=useRef(1)
     const onChange=(e)=>{
        setText(e.target.value);
-        console.log(text)
+        
     }
     //List 추가
     const onAdd=()=>{
@@ -109,7 +113,7 @@ function List(props){
                                     <div className="endDate">마감시한 : {text.date.getYear()+1900}-{text.date.getMonth()+1}-{text.date.getDate()} 까지</div>
                                     <div className='leftDate'>
                                         <div>남은시간 :</div>
-                                        <Moment duration={new Date()} date={(text.date)}></Moment>
+                                        <Moment duration={new Date()} date={text.date}></Moment>(<div>{'접수중'}</div>)
                                     </div>
                                 </div>
                             </li>
