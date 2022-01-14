@@ -3,6 +3,8 @@ import Moment from 'react-moment';
 import 'moment/locale/ko';
 import './list.css'
 import Time from '../time/Time';
+import Head from '../head/Head';
+
 
 function List(props){
 
@@ -37,6 +39,7 @@ function List(props){
             }
         ])
         setText('');
+       
     }
     //List 삭제
     const onDelete=(id)=>{
@@ -47,7 +50,6 @@ function List(props){
     //List Check 기능
   
     const onCheck=(id,text)=>{
-        
         setTodo(todo.filter(todo => {
             if(todo.id===id) check_date=todo.date;
             return todo.id!==id
@@ -91,6 +93,7 @@ function List(props){
 
     return(
         <div className='List'>
+            <Head leftList={todo.length}></Head>
             <div className='input'>
                 <input id="textinput" type="text" placeholder='입력하세요' value={text} onChange={onChange} onKeyPress={(e)=>{if(e.key==='Enter')onAdd()}}></input>
                 <Time id="datebtn" getDate={endDate}/>
