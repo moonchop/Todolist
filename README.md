@@ -24,6 +24,7 @@ https://moonchop.github.io/Todolist/
 
 ### Input
 1. input 값을 통해 List의 id, text, date를 object 형태로 업데이트함.
+
 2. DatePicker를 통해 종료일을 지정해 줌.
   ```
 <DatePicker   
@@ -37,7 +38,8 @@ https://moonchop.github.io/Todolist/
 3. input 값이 null 이거나, 종료일이 null 일 경우 list 추가는 안됨.
 
 ### List
-좌측은 해야 할 lists, 우측은 완료한 lists
+좌측은 해야 할 lists, 우측은 완료한 lists임. 
+체크버튼을 누른다면 우측으로 넘어감. 우측에서 좌측으로 넘어갈수있음.
 
 1. 마감시한은 각 list에 저장되어있는 date에서 가져옴.
 2. 남은시간은 Moment를 이용함.
