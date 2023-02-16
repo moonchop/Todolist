@@ -1,15 +1,28 @@
 # Todolist (react)
-
-https://moonchop.github.io/Todolist/
-
-
-<img src="https://user-images.githubusercontent.com/82392767/150637022-351b6541-a57a-492f-b2ff-4dfb2bd749de.png" width="800" height="400">
-
-## 리액트의 첫걸음인 todolist
 지금까지 클론코딩으로 감을 익혔고, 이번엔 오로지 구글링과 자문을 통해 todoList를 구현함.
 
 
-## Head part(Head.jsx)
+
+
+## Preview
+https://moonchop.github.io/Todolist/
+
+<img src="https://user-images.githubusercontent.com/82392767/150637022-351b6541-a57a-492f-b2ff-4dfb2bd749de.png" width="800" height="400">
+
+## Usage
+```
+git clone
+npm install
+npm start
+```
+
+## Floder structure
+![image](https://user-images.githubusercontent.com/82392767/219317023-16681c97-d9b8-45b7-bea3-f2685ef332d2.png)
+
+
+## Code description
+
+### Head part(Head.jsx)
 
 <img src="https://user-images.githubusercontent.com/82392767/150637195-9e15c7f4-3d8a-49c1-81bd-1166e7c0ed0e.png" width="200" height="120">
 
@@ -19,7 +32,7 @@ https://moonchop.github.io/Todolist/
 
 3. List.jsx에서 list들의 갯수를 받아와 남은 할 일의 개수를 나타냄.
 
-## Body part (List.jsx, Time.jsx)
+### Body part (List.jsx, Time.jsx)
 <img src="https://user-images.githubusercontent.com/82392767/150637793-0546206b-f183-4098-8cf1-ca7eb8dc4e29.png" width="800" height="200">
 
 ### Input
