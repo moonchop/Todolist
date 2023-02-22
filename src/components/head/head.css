@@ -1,27 +1,24 @@
-
-
-
-.head{
-    padding-top: 25px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e9ecef;    
+.head {
+  padding-top: 25px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
 }
 
 h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #a5b0bd;
-  }
+  margin: 0;
+  font-size: 36px;
+  color: #a5b0bd;
+}
 .day {
-    margin-top: 4px;
-    
-    font-size: 40px;
-  }
+  margin-top: 4px;
+
+  font-size: 40px;
+}
 .tasks-left {
-    color: #20c997;
-    font-size: 18px;
-    margin-top: 40px;
-    font-weight: bold;
-  }
+  color: #20c997;
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: bold;
+}

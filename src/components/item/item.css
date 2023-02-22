@@ -40,8 +40,8 @@
   transition: 0.5s;
 }
 /* #button-2:hover a {
-  color: #2D3142;
-} */
+    color: #2D3142;
+  } */
 
 /******************Button******************/
 #set-btn {
@@ -101,22 +101,22 @@
   opacity: 1;
 }
 /* #chkBtn_done{
-    margin-left: 20px;
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: rgb(182, 221, 185);
-    
-
-    width: 40px;
-    height: 40px;
-    border: none;
-    box-shadow: 0;
-    border-radius: 50%; 
-    opacity: 0.8;
-    font-size: 30px;
-    color: green;
-} */
+      margin-left: 20px;
+      margin-right: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      background-color: rgb(182, 221, 185);
+      
+  
+      width: 40px;
+      height: 40px;
+      border: none;
+      box-shadow: 0;
+      border-radius: 50%; 
+      opacity: 0.8;
+      font-size: 30px;
+      color: green;
+  } */
 
 /* 버튼와 수평맞춤 */
 #list {
