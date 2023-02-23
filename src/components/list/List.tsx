@@ -4,7 +4,7 @@ import "./list.css";
 import Time from "../time/Time";
 import Head from "../head/Head";
 import { FiCheckCircle } from "@react-icons/all-files/fi/FiCheckCircle";
-import Item from "../item/Item";
+import Item from "../../pages/item/Item";
 import { useMemo } from "react";
 export interface TodoType {
   id: number;

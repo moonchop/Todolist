@@ -13,6 +13,7 @@
 .Todo {
   /* flex: 1; */
   overflow-y: auto;
+  border-right: 1px solid #e9ecef;
 }
 .Done {
   /* flex: 1; */
