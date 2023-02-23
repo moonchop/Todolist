@@ -1,12 +1,23 @@
-import { React } from "react";
-import "./item.css";
+// import "./item.css";
 import Moment from "react-moment";
-function Item({ text, onCheck, onDelete }) {
+import { TodoType } from "components/list/List";
+function Item({
+  text,
+  onCheck,
+  onDelete,
+}: {
+  text: any;
+  onCheck: ({ id, text }: TodoType) => void;
+  onDelete: (id: number) => void;
+}) {
   return (
     <div className="Item">
       <li className="listForms" key={text.id}>
         <div className="listForm">
-          <button id="chkBtn" onClick={() => onCheck(text.id, text.text)}>
+          <button
+            id="chkBtn"
+            onClick={() => onCheck({ id: text.id, text: text.text })}
+          >
             ✔
           </button>
           <b id="list">{text.text}</b>
@@ -16,7 +27,7 @@ function Item({ text, onCheck, onDelete }) {
         </div>
         <div className="moment">
           <div className="endDate">
-            마감시한 : {text.date.getYear() + 1900}-{text.date.getMonth() + 1}-
+            마감시한 : {text.date.getFullYear()}-{text.date.getMonth() + 1}-
             {text.date.getDate()} 까지
           </div>
           <div className="leftDate">

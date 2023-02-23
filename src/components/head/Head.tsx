@@ -1,17 +1,17 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./head.css";
 
-function Head({ leftList }) {
+function Head({ leftList }: any) {
   const [clock, setClock] = useState("");
   const [fullDate, setFullDate] = useState("");
 
   useEffect(() => {
     setInterval(time, 1000);
     const newDay = new Date();
-    const year = newDay.getYear();
+    const year = newDay.getFullYear();
     const month = newDay.getMonth();
     const days = newDay.getDay();
-    setFullDate(`${year + 1900}년 ${month + 1}월 ${days}일`);
+    setFullDate(`${year}년 ${month + 1}월 ${days}일`);
   }, []);
 
   const time = () => {

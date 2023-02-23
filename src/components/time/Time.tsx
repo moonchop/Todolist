@@ -1,10 +1,10 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./time.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function Time({ getDate }) {
-  const [endDate, setEndDate] = useState(0);
+function Time({ getDate }: { getDate: any }) {
+  const [endDate, setEndDate] = useState<Date>();
 
   useEffect(() => {
     getDate(endDate);
@@ -13,7 +13,7 @@ function Time({ getDate }) {
     <div>
       <DatePicker
         selected={endDate}
-        onChange={(date) => setEndDate(date)}
+        onChange={(date: any) => setEndDate(date)}
         dateFormat="종료일 : yyyy-MM-dd"
         placeholderText="날짜 선택"
         minDate={new Date()}

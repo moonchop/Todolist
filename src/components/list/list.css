@@ -1,23 +1,22 @@
 .listForm {
   display: flex;
-  list-style: none;
 }
 .container {
+  /* display: flex;
+  flex-direction: row; */
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 532px;
+  grid-template-rows: 450px;
 }
 
 /* 2개 layout */
 .Todo {
-  flex: 1;
+  /* flex: 1; */
   overflow-y: auto;
-  /* background-color: beige; */
 }
 .Done {
-  flex: 1;
+  /* flex: 1; */
   overflow-y: auto;
-  /* background-color: rgb(182, 221, 185); */
 }
 .input {
   display: flex;
@@ -127,7 +126,8 @@
 }
 /* ul 위치 좌로 조정 */
 ul {
-  margin-left: -40px;
+  margin-left: -20px;
+  list-style: none;
 }
 
 .hidden {
@@ -135,9 +135,9 @@ ul {
 }
 
 .listForm:hover {
-  background-color: rgb(236, 177, 188);
+  background-color: rgba(219, 219, 219, 0.5);
   transition: 0.8s;
-  border-radius: 30px 30px;
+  border-radius: 40px 40px;
 }
 
 .moment {
@@ -164,4 +164,14 @@ ul {
 }
 .leftDate > div {
   margin-right: 5px;
+}
+
+.formTitle {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d3142;
+  display: flex;
+  justify-content: center;
 }

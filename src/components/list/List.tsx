@@ -1,5 +1,4 @@
-import { React, useRef, useState } from "react";
-import Moment from "react-moment";
+import React, { useEffect, useRef, useState } from "react";
 import "moment/locale/ko";
 import "./list.css";
 import Time from "../time/Time";
@@ -7,20 +6,25 @@ import Head from "../head/Head";
 import { FiCheckCircle } from "@react-icons/all-files/fi/FiCheckCircle";
 import Item from "../item/Item";
 import { useMemo } from "react";
+export interface TodoType {
+  id: number;
+  text: string;
+  date?: number;
+}
 function List() {
   const [text, setText] = useState("");
-  const [todo, setTodo] = useState([]);
-  const [done, setDone] = useState([]);
+  const [todo, setTodo] = useState<TodoType[]>([]);
+  const [done, setDone] = useState<TodoType[]>([]);
   const [end, setEnd] = useState(0);
-  let check_date; //check할 때, 해당하는 항목의 남은 시간을 저장하는 변수
+  let check_date: any; //check할 때, 해당하는 항목의 남은 시간을 저장하는 변수
   // Time에서 받아온 endData
-  const endDate = (number) => {
+  const endDate = (number: number) => {
     if (number !== 0) {
       setEnd(number);
     }
   };
   const num = useRef(1);
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     setText(e.target.value);
   };
   //List 추가
@@ -37,12 +41,12 @@ function List() {
     setText("");
   };
   //List 삭제
-  const onDelete = (id) => {
+  const onDelete = (id: number) => {
     setTodo(todo.filter((todo) => todo.id !== id));
   };
   //List Check 기능
 
-  const onCheck = (id, text) => {
+  const onCheck = ({ id, text }: TodoType) => {
     setTodo(
       todo.filter((todo) => {
         if (todo.id === id) check_date = todo.date;
@@ -61,12 +65,13 @@ function List() {
       ]);
     }
   };
+
   //Done layout 의 Delete
-  const onDelete_done = (id) => {
+  const onDelete_done = (id: number) => {
     setDone(done.filter((done) => done.id !== id));
   };
   //Done layout 의 check : List layout으로 되돌아감.
-  const onCheck_done = (id, text) => {
+  const onCheck_done = ({ id, text }: TodoType) => {
     setDone(
       done.filter((done) => {
         if (done.id === id) check_date = done.date;
@@ -89,7 +94,7 @@ function List() {
   const todoList = useMemo(
     () => (
       <ul>
-        {todo.map((text, i) => {
+        {todo.map((text) => {
           return (
             <Item
               text={text}
@@ -106,7 +111,7 @@ function List() {
   const doneList = useMemo(
     () => (
       <ul>
-        {done.map((text, i) => {
+        {done.map((text) => {
           return (
             <Item
               text={text}
@@ -149,8 +154,14 @@ function List() {
       </div>
 
       <div className="container">
-        <div className="Todo">{todoList}</div>
-        <div className="Done">{doneList}</div>
+        <div className="Todo">
+          <span className="formTitle">Todo</span>
+          {todoList}
+        </div>
+        <div className="Done">
+          <span className="formTitle">Done</span>
+          {doneList}
+        </div>
       </div>
     </div>
   );
